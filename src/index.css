@@ -1,0 +1,23 @@
+:root {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  --darker: #070C0E;
+  --base: #0C1618;
+  --surface: #152629;
+  --overlay: #1C3236;
+  --muted: #6e6a86;
+  --text: #e0def4;
+  --love: #eb6f92;
+  --leaf: #89ceae;
+  --pine: #31748f;
+  --white: rgb(250, 250, 250);
+
+  background-color: var(--base);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
