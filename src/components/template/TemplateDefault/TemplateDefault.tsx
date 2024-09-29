@@ -8,7 +8,7 @@ function TemplateDefault({ children }: Props) {
   return (
     <>
       <Header></Header>
-      <div style={{padding: "0 2em"}}>{children}</div>
+      <div>{children}</div>
     </>
   );
 }

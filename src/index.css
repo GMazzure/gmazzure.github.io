@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -10,11 +14,12 @@
   --muted: #6e6a86;
   --text: #e0def4;
   --love: #eb6f92;
-  --leaf: #89ceae;
+  --leaf: #4b8369;
   --pine: #31748f;
   --white: rgb(250, 250, 250);
+  --black: rgb(15, 15, 15);
 
-  background-color: var(--base);
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
 }
 
 body {

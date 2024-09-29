@@ -1,37 +1,39 @@
-import React from 'react'
+import React from "react";
 import "./Header.css";
 
-interface Props {
-    
-}
+interface Props {}
 
 export const Header = (props: Props) => {
-    return (
-      <div>
-        <div className="header">
-          <nav>
-            <a href="">
-              <span style={{ color: "var(--white)" }}>gmazzure.</span>
-              <span style={{ color: "var(--leaf)" }}>dev</span>
-            </a>
-            <ul className="header-nav">
-              <li>
-                <a href="">Home</a>
-              </li>
-              <li>
-                <a href="">Experience</a>
-              </li>
-              <li>
-                <a href="">Posts</a>
-              </li>
-              <li style={{ paddingLeft: "1.3em" }}>
-                <a style={{ fontSize: "27px" }} href="/en/">
-                  🇺🇸
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </div>
+
+  return (
+    <div>
+      <div className="header">
+        <nav>
+          <a href="">
+            <span style={{ color: "var(--black)" }}>gmazzure</span>
+            <span className="text-emerald-700">.dev</span>
+          </a>
+          <ul className="header-nav tracking-widest text-sm">
+            <li className="menu-item">
+              <a href="">ABOUT</a>
+            </li>
+            <li className="menu-item">
+              <a href="">EXPERIENCE</a>
+            </li>
+            <li className="menu-item">
+              <a href="">PROJECTS</a>
+            </li>
+            <li>
+              <a className="text-neutral-100 active:text-neutral-100 lets-chat">
+                <span className="px-4 rounded-full hover:rounded-lg tracking-tight bg-emerald-700 text-neutral-100 scroll-pt-3 p-2">
+                  LET'S CHAT!
+                </span>
+              </a>
+            </li>
+          </ul>
+        </nav>
       </div>
-    );
-}
+      <div className="circle move-horizontal"></div>
+    </div>
+  );
+};

@@ -1,0 +1,137 @@
+.cardLayout {
+    background-color: #fff;
+    max-width: 100%;
+    margin: 0 auto;    
+    background-color: rgb(240, 240, 240);
+}
+
+#about {
+    /* background-color: var(--darker); */
+    /* border: 2px solid var(--surface); */
+    padding: 24px;
+    /* border-radius: 4px; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+}
+
+#about .devPhoto {
+    visibility: visible;
+    opacity: 1;
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    transition: opacity 2s cubic-bezier(0.5, 0, 0, 1) 0.3s, transform 2s cubic-bezier(0.5, 0, 0, 1) 0.3s;
+    width: 100%; 
+    max-width: 500px;
+    background-image: url('../../../assets/developer.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    /* border-radius: 4px; */
+    height: 400px;
+    animation: slide-in .75s;
+
+    @media (max-width: 768px) {
+        display: none;
+    }
+}
+
+
+
+#about .aboutMe {
+    width: 90%; 
+    color: white;
+    padding: 1em;
+    animation: slide-in .75s;
+}
+
+#about ul li {
+    padding: 16px;
+    border-radius: 100%;
+    background-color: rgb(4 120 87 / 1);
+    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);   
+}
+
+#about ul li:hover {
+    border-radius: 8px;
+    box-shadow: 0 0 10px #aaa;
+}
+
+#about ul li:hover img{
+    transform: scale(1.5);
+}
+
+.words-wrapper {
+    display: inline-block;
+    position: relative;
+    text-align: left
+}
+
+.words-wrapper p{
+    display: inline-block;
+    position: absolute;
+    white-space: nowrap;
+    left: 0;
+    top: 0;
+}
+
+p.is-visible {
+    position: relative;    
+}
+
+.aboutMe .words-wrapper {
+    overflow: hidden;
+    vertical-align: top;
+    width: auto!important;
+    display: inline-block;
+    min-width: 6em!important
+}
+
+.slide {
+    opacity: 0;
+    top: .2em;
+}
+
+.words-wrapper p.is-visible {
+    top: 0;
+    opacity: 1;
+    animation: slide-in .75s
+}
+
+.words-wrapper p.is-hidden {
+    animation: slide-out .75s
+}
+
+@keyframes slide-in {
+    0% {
+        opacity: 0;
+        transform: translateY(100%)
+    }
+
+    60% {
+        opacity: 1;
+        transform: translateY(-10%)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+@keyframes slide-out {
+    0% {
+        opacity: 1;
+        transform: translateY(0)
+    }
+
+    60% {
+        opacity: 0;
+        transform: translateY(-90%)
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-100%)
+    }
+}
