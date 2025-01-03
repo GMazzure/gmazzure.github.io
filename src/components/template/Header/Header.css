@@ -1,6 +1,6 @@
 .header {
     /* background-color: var(--darker); */
-    height: 80px;
+    height: 60px;
     position: sticky;
     top: 0;
     display: flex;
@@ -9,6 +9,7 @@
     -ms-flex-pack: center;
     justify-content: center;
     z-index: 1;
+    background-color: #fff;
     box-shadow: 0 -40px 50px var(--leaf);
     font-weight: 700;
 }
@@ -54,7 +55,7 @@ nav>a {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;    
-    font-size: 26px;
+    font-size: 22px;
     cursor: pointer;
 }
 
@@ -101,7 +102,6 @@ nav ul {
 
 .header-nav .menu-item a {
     color: #323232;
-    font-size: .8rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px 
@@ -121,14 +121,19 @@ nav ul {
     width: 100%
 }
 
-.lets-chat:hover span{ 
-    transform: scale(1.5);
-    box-shadow: 0 0 10px #ccc;
+
+.lets-chat span{
+    transition: all .3s ease;  
+}
+
+.lets-chat:hover span:hover {
+    border-radius: 8px;
+    box-shadow: 0 0 10px #aaa;
 }
 
 .circle {
-    position: absolute;
-    top: 74px;
+    position: fixed;
+    top: 54px;
     width: 12px;
     height: 12px;
     background-color: rgb(4 120 87);
@@ -137,6 +142,8 @@ nav ul {
     animation-iteration-count: infinite;
     animation-timing-function: linear;
     float: left;
+    overflow: hidden;
+    z-index: 50;
 }
 
 .move-horizontal {
@@ -152,7 +159,7 @@ nav ul {
     transform: translateX(-50px);
   }
   to {
-    transform: translateX(110vw);
+    transform: translateX(100vw);
   }
 }
 

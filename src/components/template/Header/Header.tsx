@@ -1,19 +1,16 @@
-import React from "react";
 import "./Header.css";
 
-interface Props {}
-
-export const Header = (props: Props) => {
+export const Header = () => {
 
   return (
-    <div>
+    <>
       <div className="header">
         <nav>
           <a href="">
             <span style={{ color: "var(--black)" }}>gmazzure</span>
             <span className="text-emerald-700">.dev</span>
           </a>
-          <ul className="header-nav tracking-widest text-sm">
+          <ul className="header-nav tracking-widest text-xs">
             <li className="menu-item">
               <a href="">ABOUT</a>
             </li>
@@ -25,7 +22,7 @@ export const Header = (props: Props) => {
             </li>
             <li>
               <a className="text-neutral-100 active:text-neutral-100 lets-chat">
-                <span className="px-4 rounded-full hover:rounded-lg tracking-tight bg-emerald-700 text-neutral-100 scroll-pt-3 p-2">
+                <span className="px-4 rounded-full tracking-tight bg-emerald-700 text-neutral-100 scroll-pt-3 p-2">
                   LET'S CHAT!
                 </span>
               </a>
@@ -34,6 +31,6 @@ export const Header = (props: Props) => {
         </nav>
       </div>
       <div className="circle move-horizontal"></div>
-    </div>
+    </>
   );
 };

@@ -7,7 +7,6 @@ type Props = {};
 // import devPhoto from "../../../assets/leaf.avif";
 import linkedinIcon from "../../../assets/icons/linkedin-leaf.svg";
 import githubIcon from "../../../assets/icons/github-white.png";
-import MatrixEffect from "../../matrixEffect/matrixEffect";
 
 export default function CardApresentacao({}: Props) {
   const [currentText, setCurrentText] = useState(0);
@@ -22,14 +21,15 @@ export default function CardApresentacao({}: Props) {
 
   return (
     <section className="cardLayout p-8">
-      <div id="about">
-        <div className="devPhoto" />
-        <div className="aboutMe">
+      <div id="about" className="justify-evenly">
+        <div className="devPhoto max-w-md floating-animation" />
+       
+        <div className="aboutMe max-w-2xl">
           <p className="text-neutral-800 mt-0 -mb-1 font-medium text-2xl">
             Gustavo Mazzure
           </p>
 
-          <div className="words-wrapper text-neutral-500 mt-0 t tracking-widest">
+          <div className="words-wrapper text-neutral-500 mt-0 text-xs size tracking-widest">
             <p
               className={
                 "slide " + (currentText != 0 ? "is-hidden" : "is-visible")
@@ -71,18 +71,20 @@ export default function CardApresentacao({}: Props) {
             </p>
           </div>
 
-          <p className="text-emerald-700 mt-4 mb-1 font-medium text-xl border-emerald-700 border-b-4 min-w-56 w-1/4">
+          <p className="text-emerald-700 mt-4 mb-1 font-medium text-lg border-emerald-700 border-b-2 min-w-56 w-1/4">
             About me
           </p>
 
-          <p className="text-neutral-500 text-lg font-regular">
-            Hello there! I've been  {" "}
-            {/* <s>creating</s> <b>fixing</b>  */}
-            tailoring solutions since 2017. I built,
-            trained, managed, grown and led development teams of 2 to 7 people.
-            I Have worked on at least 30 projects, designed and implemented at
-            least 10 databases, integrated with more than 40 APIs and 10 client
-            companies thus far. I am a lifelong learner and a problem solver.
+          <p className="text-neutral-500 text-base font-regular">
+            Hello there! I've been {/* <s>creating</s> <b>fixing</b>  */}
+            tailoring solutions since 2017. I built, trained, managed, grown and
+            led development teams of 2 to 7 people. I Have worked on at least{" "}
+            <span className="font-medium">30 projects</span>, designed and
+            implemented at least{" "}
+            <span className="font-medium">10 databases</span>, integrated with
+            more than <span className="font-medium">40 APIs</span> and{" "}
+            <span className="font-medium">10 client companies</span> thus far. I
+            am a lifelong learner and a problem solver.
           </p>
 
           <ul
@@ -106,7 +108,6 @@ export default function CardApresentacao({}: Props) {
               </li>
             </a>
           </ul>
-          {/* <MatrixEffect /> */}
         </div>
       </div>
     </section>
