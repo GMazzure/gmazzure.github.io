@@ -1,14 +1,11 @@
 import {
   FaAws,
   FaPhp, FaDocker, FaLaravel,
-  FaGit,
-  FaGithub,
-  FaJava,
   FaNodeJs,
   FaPython,
   FaReact,
 } from "react-icons/fa";
-import { SiApachekafka, SiNodered, SiRedux, SiGrafana, SiPostgresql, SiJavascript, SiMongodb, SiSwagger } from "react-icons/si";
+import { SiApachekafka, SiNodered, SiGrafana, SiPostgresql, SiJavascript, SiMongodb } from "react-icons/si";
 import { DiMsqlServer } from "react-icons/di";
 type Experience = {
   company: string;
