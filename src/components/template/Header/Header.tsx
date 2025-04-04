@@ -5,20 +5,20 @@ export const Header = () => {
   return (
     <>
       <div className="header">
-        <nav>
+        <nav style={{marginTop: '-6px'}}>
           <a href="">
             <span style={{ color: "var(--black)" }}>gmazzure</span>
             <span className="text-emerald-700">.dev</span>
           </a>
           <ul className="header-nav tracking-widest text-xs">
             <li className="menu-item">
-              <a href="">ABOUT</a>
+              <a href="#about-me">ABOUT</a>
             </li>
             <li className="menu-item">
-              <a href="">EXPERIENCE</a>
+              <a href="#projects">PROJECTS</a>
             </li>
             <li className="menu-item">
-              <a href="">PROJECTS</a>
+              <a href="#experience">EXPERIENCE</a>
             </li>
             <li>
               <a className="text-neutral-100 active:text-neutral-100 lets-chat">

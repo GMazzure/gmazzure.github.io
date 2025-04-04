@@ -20,7 +20,7 @@ export default function CardApresentacao({}: Props) {
   }, []);
 
   return (
-    <section className="cardLayout p-8">
+    <section className="cardLayout p-8" id="about-me">
       <div id="about" className="justify-evenly">
         <div className="devPhoto max-w-md floating-animation" />
        
