@@ -21,7 +21,7 @@ export const Header = () => {
               <a href="#experience">EXPERIENCE</a>
             </li>
             <li>
-              <a className="text-neutral-100 active:text-neutral-100 lets-chat">
+              <a className="text-neutral-100 active:text-neutral-100 lets-chat" href="#contact">
                 <span className="px-4 rounded-full tracking-tight bg-emerald-700 text-neutral-100 scroll-pt-3 p-2">
                   LET'S CHAT!
                 </span>
