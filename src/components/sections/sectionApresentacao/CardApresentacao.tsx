@@ -78,12 +78,8 @@ export default function CardApresentacao({}: Props) {
           <p className="text-neutral-500 text-base font-regular">
             Hello there! I've been {/* <s>creating</s> <b>fixing</b>  */}
             tailoring solutions since 2017. I built, trained, managed, grown and
-            led development teams of 2 to 7 people. I Have worked on at least{" "}
-            <span className="font-medium">30 projects</span>, designed and
-            implemented at least{" "}
-            <span className="font-medium">10 databases</span>, integrated with
-            more than <span className="font-medium">40 APIs</span> and{" "}
-            <span className="font-medium">10 client companies</span> thus far. I
+            led development teams of 2 to 7 people. I've worked on many projects, designed and
+            implemented databases and integrated with multiple APIs thus far. I
             am a lifelong learner and a problem solver.
           </p>
 
