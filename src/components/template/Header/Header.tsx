@@ -1,3 +1,4 @@
+import { FiNavigation } from "react-icons/fi";
 import "./Header.css";
 
 export const Header = () => {
@@ -5,7 +6,7 @@ export const Header = () => {
   return (
     <>
       <div className="header">
-        <nav style={{marginTop: '-6px'}}>
+        <FiNavigation>
           <a href="">
             <span style={{ color: "var(--black)" }}>gmazzure</span>
             <span className="text-emerald-700">.dev</span>
@@ -28,7 +29,7 @@ export const Header = () => {
               </a>
             </li>
           </ul>
-        </nav>
+        </FiNavigation>
       </div>
       <div className="circle move-horizontal"></div>
     </>
