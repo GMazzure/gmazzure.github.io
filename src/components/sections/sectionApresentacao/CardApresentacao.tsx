@@ -93,12 +93,12 @@ export default function CardApresentacao({}: Props) {
               listStyle: "none",
             }}
           >
-            <a href="">
+            <a href="https://www.linkedin.com/in/gustavo-mazzure/" target="_blank">
               <li>
                 <img src={linkedinIcon} alt="" width="26" />
               </li>
             </a>
-            <a href="">
+            <a href="https://github.com/GMazzure" target="_blank">
               <li>
                 <img src={githubIcon} alt="" width="26" />
               </li>
