@@ -7,7 +7,15 @@ export default function ProjectsSection() {
       description: "This is my porfolio, created to show my skills, assets and present myself",
       technologies: ["React", "TypeScript", "Tailwind"],
       imageUrl: "/portfolio.png",
-      // githubUrl: "https://github.com/yourusername/project1",
+      githubUrl: "https://github.com/GMazzure/gmazzure.github.io",
+      liveUrl: "https://gmazzure.github.io/",
+    },
+    {
+      title: "Promptopia",
+      description: "Open-source for you to discover, create, and share creative AI prompts",
+      technologies: ["Next.js", "TypeScript", "Tailwind", "MongoDB", "Google OAuth"],
+      imageUrl: "/promptopia.png",
+      githubUrl: "https://github.com/GMazzure/promptopia",
       // liveUrl: "https://project1.com",
     },
     
