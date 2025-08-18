@@ -43,9 +43,9 @@ export default function ProjectsSection() {
   return (
     <section className="py-16 bg-gray-50" id="projects">
       <div className="container mx-auto px-4">
-        <div className="text mb-12">
+        <div className="text mb-12 text-center">
           <h2 className="text-3xl font-bold text-neutral-800 mb-4">Projects</h2>
-          <p className="text-neutral-600 max-w-2xl">
+          <p className="text-neutral-600 max-w-2xl mx-auto">
             Here are some projects I've built
           </p>
         </div>      

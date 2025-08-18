@@ -9,8 +9,8 @@ const Home = () => {
   return (
     <TemplateDefault>
       <CardApresentacao />
-      <ProjectsSection />
       <SkillsSection />
+      <ProjectsSection />
       <ExperienceSection />
       <ContactSection />
     </TemplateDefault>

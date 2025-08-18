@@ -39,7 +39,7 @@ export const Header = () => {
               <li>
                 <a className="text-neutral-100 active:text-neutral-100 lets-chat" href="#contact">
                   <span className="px-4 rounded-full tracking-tight bg-emerald-700 text-neutral-100 scroll-pt-3 p-2">
-                    LET'S CHAT!
+                    Get in touch!
                   </span>
                 </a>
               </li>
@@ -56,7 +56,7 @@ export const Header = () => {
                 <li>
                   <a href="#contact" className="block" onClick={() => setIsMenuOpen(false)}>
                     <span className="inline-block px-4 py-2 rounded-full bg-emerald-700 text-white text-sm font-medium">
-                      LET'S CHAT!
+                      Get in touch!
                     </span>
                   </a>
                 </li>

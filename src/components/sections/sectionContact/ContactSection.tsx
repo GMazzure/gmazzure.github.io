@@ -150,22 +150,31 @@ export default function ContactSection() {
   };
   
   return (
-    <section className="contact-section py-16" id="contact">
+    <section className="contact-section py-16 bg-gray-50" id="contact">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-neutral-800 mb-0">Contact me</h2>
-        <p className="text-stone-400 mb-4">Let's get in touch!</p>
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-neutral-800 mb-4">Get in touch!</h2>
+          <p className="text-neutral-600 max-w-2xl mx-auto">
+            Always open to connecting, exchanging ideas, and exploring opportunities.
+            Feel free to reach out here, via gmazzure.dev@gmail.com or by <a href="https://www.linkedin.com/in/gustavo-mazzure/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">LinkedIn</a>.
+          </p>
+        </div>
+        
         <div className="max-w-2xl mx-auto">
           {submitSuccess === true ? (
-            <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4">
-              <p>{submitMessage}</p>
+            <div className="bg-green-50 border border-green-200 text-green-800 px-6 py-4 rounded-lg mb-6 flex items-center gap-3">
+              <span className="text-green-500 text-xl">✓</span>
+              <p className="font-medium">{submitMessage}</p>
             </div>
           ) : submitSuccess === false ? (
-            <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
-              <p>{submitMessage}</p>
+            <div className="bg-red-50 border border-red-200 text-red-800 px-6 py-4 rounded-lg mb-6 flex items-center gap-3">
+              <span className="text-red-500 text-xl">⚠</span>
+              <p className="font-medium">{submitMessage}</p>
             </div>
           ) : null}
           
-          <form className="space-y-6" onSubmit={handleSubmit}>
+          <div className="bg-white p-8 rounded-xl shadow-lg">
+            <form className="space-y-6" onSubmit={handleSubmit}>
             {/* Honeypot field - hidden from humans but bots might fill it */}
             <div className="hidden" aria-hidden="true">
               <label htmlFor="website">Website (Leave this empty)</label>
@@ -180,97 +189,130 @@ export default function ContactSection() {
               />
             </div>
             
-            <div>
-              <label
-                htmlFor="name"
-                className="block text-sm font-medium text-neutral-700"
-              >
-                Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                className={`mt-1 p-2 block w-full rounded-md border ${
-                  errors.name ? 'border-red-500' : 'border-gray-300'
-                } shadow-sm focus:border-emerald-500 focus:ring-emerald-500`}
-              />
-              {errors.name && (
-                <p className="mt-1 text-sm text-red-600">{errors.name}</p>
-              )}
-            </div>
-            <div>
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium text-neutral-700"
-              >
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                className={`mt-1 p-2 block w-full rounded-md border ${
-                  errors.email ? 'border-red-500' : 'border-gray-300'
-                } shadow-sm focus:border-emerald-500 focus:ring-emerald-500`}
-              />
-              {errors.email && (
-                <p className="mt-1 text-sm text-red-600">{errors.email}</p>
-              )}
-            </div>
-            <div>
-              <label
-                htmlFor="message"
-                className="block text-sm font-medium text-neutral-700"
-              >
-                Message
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                rows={4}
-                value={formData.message}
-                onChange={handleChange}
-                className={`mt-1 p-2 block w-full rounded-md border ${
-                  errors.message ? 'border-red-500' : 'border-gray-300'
-                } shadow-sm focus:border-emerald-500 focus:ring-emerald-500`}
-              ></textarea>
-              {errors.message && (
-                <p className="mt-1 text-sm text-red-600">{errors.message}</p>
-              )}
-            </div>
+              <div className="space-y-6">
+                <div className="relative">
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder=" "
+                    className={`peer w-full px-4 py-3 border-2 rounded-lg bg-gray-50 focus:bg-white transition-all duration-200 placeholder-transparent ${
+                      errors.name 
+                        ? 'border-red-400 focus:border-red-500' 
+                        : 'border-gray-200 focus:border-emerald-500'
+                    } focus:outline-none`}
+                  />
+                  <label
+                    htmlFor="name"
+                    className="absolute left-4 -top-2.5 bg-white px-2 text-sm font-medium text-gray-600 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-3 peer-placeholder-shown:bg-transparent peer-focus:-top-2.5 peer-focus:text-sm peer-focus:text-emerald-600 peer-focus:bg-white"
+                  >
+                    What's your name?
+                  </label>
+                  {errors.name && (
+                    <p className="mt-2 text-sm text-red-600 flex items-center gap-1">
+                      <span>⚠</span> {errors.name}
+                    </p>
+                  )}
+                </div>
+
+                <div className="relative">
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder=" "
+                    className={`peer w-full px-4 py-3 border-2 rounded-lg bg-gray-50 focus:bg-white transition-all duration-200 placeholder-transparent ${
+                      errors.email 
+                        ? 'border-red-400 focus:border-red-500' 
+                        : 'border-gray-200 focus:border-emerald-500'
+                    } focus:outline-none`}
+                  />
+                  <label
+                    htmlFor="email"
+                    className="absolute left-4 -top-2.5 bg-white px-2 text-sm font-medium text-gray-600 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-3 peer-placeholder-shown:bg-transparent peer-focus:-top-2.5 peer-focus:text-sm peer-focus:text-emerald-600 peer-focus:bg-white"
+                  >
+                    Your email address
+                  </label>
+                  {errors.email && (
+                    <p className="mt-2 text-sm text-red-600 flex items-center gap-1">
+                      <span>⚠</span> {errors.email}
+                    </p>
+                  )}
+                </div>
+
+                <div className="relative">
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows={5}
+                    value={formData.message}
+                    onChange={handleChange}
+                    placeholder=" "
+                    className={`peer w-full px-4 py-3 border-2 rounded-lg bg-gray-50 focus:bg-white transition-all duration-200 placeholder-transparent resize-none ${
+                      errors.message 
+                        ? 'border-red-400 focus:border-red-500' 
+                        : 'border-gray-200 focus:border-emerald-500'
+                    } focus:outline-none`}
+                  ></textarea>
+                  <label
+                    htmlFor="message"
+                    className="absolute left-4 -top-2.5 bg-white px-2 text-sm font-medium text-gray-600 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-3 peer-placeholder-shown:bg-transparent peer-focus:-top-2.5 peer-focus:text-sm peer-focus:text-emerald-600 peer-focus:bg-white"
+                  >
+                    Tell me about your project
+                  </label>
+                  {errors.message && (
+                    <p className="mt-2 text-sm text-red-600 flex items-center gap-1">
+                      <span>⚠</span> {errors.message}
+                    </p>
+                  )}
+                </div>
+              </div>
             
-            <div className="flex justify-center">
-              <ReCAPTCHA
-                ref={recaptchaRef}
-                sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY || ""}
-                onChange={handleRecaptchaChange}
-              />
-            </div>
-            {errors.recaptcha && (
-              <p className="text-sm text-red-600 text-center">{errors.recaptcha}</p>
-            )}
-            
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className={`w-full ${
-                isSubmitting ? 'bg-emerald-400' : 'bg-emerald-600 hover:bg-emerald-700'
-              } text-white px-4 py-2 rounded-md transition-colors`}
-            >
-              {isSubmitting ? 'Sending...' : 'Send Message'}
-            </button>
-          </form>
+              <div className="flex justify-center pt-4">
+                <ReCAPTCHA
+                  ref={recaptchaRef}
+                  sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY || ""}
+                  onChange={handleRecaptchaChange}
+                />
+              </div>
+              {errors.recaptcha && (
+                <p className="text-sm text-red-600 text-center flex items-center justify-center gap-1">
+                  <span>⚠</span> {errors.recaptcha}
+                </p>
+              )}
+              
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className={`w-full py-4 px-6 rounded-lg font-semibold text-white transition-all duration-200 transform ${
+                  isSubmitting 
+                    ? 'bg-emerald-400 cursor-not-allowed' 
+                    : 'bg-emerald-600 hover:bg-emerald-700 hover:scale-[1.02] active:scale-[0.98]'
+                } shadow-lg hover:shadow-xl`}
+              >
+                {isSubmitting ? (
+                  <span className="flex items-center justify-center gap-2">
+                    <span className="animate-spin">⏳</span>
+                    Sending your message...
+                  </span>
+                ) : (
+                  <span className="flex items-center justify-center gap-2">
+                    Send Message
+                  </span>
+                )}
+              </button>
+            </form>
+          </div>
           
           <div className="mt-8 text-center">
-            <p className="text-neutral-600">Or reach out directly:</p>
+            <p className="text-neutral-600 mb-3">Prefer email?</p>
             <a
               href="mailto:gmazzure.dev@gmail.com"
-              className="text-emerald-600 hover:text-emerald-700"
+              className="inline-flex items-center gap-2 text-emerald-600 hover:text-emerald-700 font-medium transition-colors"
             >
               gmazzure.dev@gmail.com
             </a>
