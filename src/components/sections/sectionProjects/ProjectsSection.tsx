@@ -25,7 +25,7 @@ export default function ProjectsSection() {
       title: "Service Intermediation Platform",
       description: "Platform that offers disccount in selected service providers, featuring payments and management tools",
       technologies: ["Next.js", "TypeScript", "PostgreSQL"],
-      imageUrl: "/docs/wip.png",
+      imageUrl: "/wip.png",
       category: "web",
       status: "wip"
     }
