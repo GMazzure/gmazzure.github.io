@@ -3,12 +3,11 @@ import { interval } from "rxjs";
 
 import { useState, useEffect } from "react";
 
-type Props = {};
 // import devPhoto from "../../../assets/leaf.avif";
 import linkedinIcon from "../../../assets/icons/linkedin-leaf.svg";
 import githubIcon from "../../../assets/icons/github-white.png";
 
-export default function CardApresentacao({}: Props) {
+export default function CardApresentacao() {
   const [currentText, setCurrentText] = useState(0);
   const observable$ = interval(2500);
 
@@ -17,13 +16,13 @@ export default function CardApresentacao({}: Props) {
       setCurrentText((curState: number) => (curState < 4 ? curState + 1 : 0))
     );
     return () => subscription.unsubscribe();
-  }, []);
+  }, [observable$]);
 
   return (
     <section className="cardLayout p-8" id="about-me">
       <div id="about" className="justify-evenly">
         <div className="devPhoto max-w-md floating-animation" />
-       
+
         <div className="aboutMe max-w-2xl">
           <p className="text-neutral-800 mt-0 -mb-1 font-medium text-2xl">
             Gustavo Mazzure
@@ -76,11 +75,10 @@ export default function CardApresentacao({}: Props) {
           </p>
 
           <p className="text-neutral-500 text-base font-regular">
-            Hello there! I've been {/* <s>creating</s> <b>fixing</b>  */}
-            tailoring solutions since 2017. I built, trained, managed, grown and
-            led development teams of 2 to 7 people. I've worked on many projects, designed and
-            implemented databases and integrated with multiple APIs thus far. I
-            am a lifelong learner and a problem solver.
+            Hello there! I’m a Senior Software Engineer with 8+ years of experience 
+            helping to build a smarter digital world. I’ve designed system architectures, 
+            automated complex flows, led and mentored development teams through impactful projects. 
+            My mission is simple: build software that not only works, but also lasts.
           </p>
 
           <ul

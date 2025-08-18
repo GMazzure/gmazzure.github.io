@@ -1,14 +1,13 @@
 .header {
-    /* background-color: var(--darker); */
     height: 60px;
     position: sticky;
     top: 0;
     display: flex;
-    padding: 0 1rem;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    z-index: 1;
+    align-items: center;
+    z-index: 50;
     background-color: #fff;
     box-shadow: 0 -40px 50px var(--leaf);
     font-weight: 700;
@@ -26,16 +25,13 @@ nav {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    padding-top: 18px;
-    padding-bottom: 1.5rem;
     gap: 2rem;
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
     -ms-flex-line-pack: justify;
     align-content: space-between;
-    max-width: 1140px;
-    width: 100vw;
+    width: 100%;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
