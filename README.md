@@ -1,27 +1,57 @@
-# React + TypeScript + Vite
+# React + TypeScript + Vite Portfolio with Secure Contact Form
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a personal portfolio website built with React, TypeScript, and Vite, featuring a secure contact form with bot protection that sends submissions to an AWS Lambda function.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Responsive design with Tailwind CSS
+- Contact form with multiple layers of bot protection:
+  - Google reCAPTCHA integration
+  - Honeypot field
+  - Server-side validation
+- Serverless backend using AWS Lambda and SES for email delivery
+- Form validation and error handling
 
-## Expanding the ESLint configuration
+## Contact Form Implementation
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+The contact form has been implemented with security in mind:
 
-- Configure the top-level `parserOptions` property like this:
+1. **Frontend**: React component with form validation, reCAPTCHA, and honeypot field
+2. **Backend**: AWS Lambda function that verifies the reCAPTCHA token and sends emails via AWS SES
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+For detailed implementation instructions, see the [IMPLEMENTATION_GUIDE.md](./IMPLEMENTATION_GUIDE.md) file.
+
+## Setup and Configuration
+
+### Prerequisites
+
+- Node.js and npm
+- AWS account
+- Google reCAPTCHA account
+
+### Installation
+
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Configure the contact form by following the instructions in the [lambda/README.md](./lambda/README.md) file.
+
+### Development
+
+```bash
+npm run dev
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Build
+
+```bash
+npm run build
+```
+
+## Testing
+
+```bash
+npm test
+```
