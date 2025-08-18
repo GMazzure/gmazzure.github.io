@@ -26,7 +26,7 @@ export const Header = () => {
             </button>
             
             {/* Desktop menu */}
-            <ul className="header-nav tracking-widest text-xs hidden md:flex">
+            <ul className="header-nav tracking-widest text-sm hidden md:flex">
               <li className="menu-item">
                 <a href="#about-me">ABOUT</a>
               </li>

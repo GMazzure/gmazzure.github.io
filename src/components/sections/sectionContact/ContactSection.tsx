@@ -150,7 +150,7 @@ export default function ContactSection() {
   };
   
   return (
-    <section className="contact-section py-16 bg-gray-50" id="contact">
+    <section className="contact-section py-16 bg-gray-100" id="contact">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-neutral-800 mb-4">Get in touch!</h2>
@@ -173,7 +173,7 @@ export default function ContactSection() {
             </div>
           ) : null}
           
-          <div className="bg-white p-8 rounded-xl shadow-lg">
+          <div className="bg-white p-8 pt-4 rounded-xl shadow-lg">
             <form className="space-y-6" onSubmit={handleSubmit}>
             {/* Honeypot field - hidden from humans but bots might fill it */}
             <div className="hidden" aria-hidden="true">
@@ -206,7 +206,7 @@ export default function ContactSection() {
                   />
                   <label
                     htmlFor="name"
-                    className="absolute left-4 -top-2.5 bg-white px-2 text-sm font-medium text-gray-600 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-3 peer-placeholder-shown:bg-transparent peer-focus:-top-2.5 peer-focus:text-sm peer-focus:text-emerald-600 peer-focus:bg-white"
+                    className="absolute left-4 -top-2.5 bg-white px-2 text-base font-medium text-gray-600 transition-all peer-placeholder-shown:text-lg peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-3 peer-placeholder-shown:bg-transparent peer-focus:-top-2.5 peer-focus:text-base peer-focus:text-emerald-600 peer-focus:bg-white"
                   >
                     What's your name?
                   </label>
@@ -233,7 +233,7 @@ export default function ContactSection() {
                   />
                   <label
                     htmlFor="email"
-                    className="absolute left-4 -top-2.5 bg-white px-2 text-sm font-medium text-gray-600 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-3 peer-placeholder-shown:bg-transparent peer-focus:-top-2.5 peer-focus:text-sm peer-focus:text-emerald-600 peer-focus:bg-white"
+                    className="absolute left-4 -top-2.5 bg-white px-2 text-base font-medium text-gray-600 transition-all peer-placeholder-shown:text-lg peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-3 peer-placeholder-shown:bg-transparent peer-focus:-top-2.5 peer-focus:text-base peer-focus:text-emerald-600 peer-focus:bg-white"
                   >
                     Your email address
                   </label>

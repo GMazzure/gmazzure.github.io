@@ -28,7 +28,7 @@ export default function CardApresentacao() {
             Gustavo Mazzure
           </p>
 
-          <div className="words-wrapper text-neutral-500 mt-0 text-xs size tracking-widest">
+          <div className="words-wrapper text-neutral-500 mt-0 text-sm size tracking-widest">
             <p
               className={
                 "slide " + (currentText != 0 ? "is-hidden" : "is-visible")
@@ -74,7 +74,7 @@ export default function CardApresentacao() {
             About me
           </p>
 
-          <p className="text-neutral-500 text-base font-regular">
+          <p className="text-neutral-500 text-lg font-regular">
             Hello there! I’m a Senior Software Engineer with 8+ years of experience 
             helping to build a smarter digital world. I’ve designed system architectures, 
             automated complex flows, led and mentored development teams through impactful projects. 

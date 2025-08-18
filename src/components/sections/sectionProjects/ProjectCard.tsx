@@ -54,7 +54,7 @@ export default function ProjectCard({
               return (
                 <div
                   key={tech}
-                  className="flex items-center gap-1.5 px-3 py-1.5 bg-gray-50 text-gray-700 rounded-lg text-sm font-medium hover:bg-gray-100 transition-colors"
+                  className="flex items-center gap-1.5 px-3 py-1.5 bg-gray-50 text-gray-700 rounded-lg text-base font-medium hover:bg-gray-100 transition-colors"
                 >
                   {getTechIcon(tech)}
                   <span>{tech}</span>

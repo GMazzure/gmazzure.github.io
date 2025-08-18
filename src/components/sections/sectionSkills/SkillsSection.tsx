@@ -7,11 +7,11 @@ export default function SkillsSection() {
   const [activeCategory, setActiveCategory] = useState("all");
 
   const skillCategories = [
-    { id: "all", label: "Main Stack", icon: "⚡" },
-    { id: "frontend", label: "Frontend", icon: "🎨" },
-    { id: "backend", label: "Backend", icon: "⚙️" },
-    { id: "database", label: "Database", icon: "🗄️" },
-    { id: "tools", label: "Tools & DevOps", icon: "🛠️" }
+    { id: "all", label: "Main Stack" },
+    { id: "frontend", label: "Frontend" },
+    { id: "backend", label: "Backend" },
+    { id: "database", label: "Database" },
+    { id: "tools", label: "Tools & DevOps" }
   ];
 
   const mainSkills = [
@@ -68,7 +68,7 @@ export default function SkillsSection() {
     : allSkills.filter(skill => skill.category === activeCategory);
 
   return (
-    <section className="skills-section py-16 bg-gray-50">
+    <section className="skills-section py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-neutral-800 mb-4">Skills & Technologies</h2>
@@ -84,13 +84,12 @@ export default function SkillsSection() {
               <button
                 key={category.id}
                 onClick={() => setActiveCategory(category.id)}
-                className={`flex items-center gap-2 px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                className={`px-6 py-3 rounded-lg text-base font-medium transition-colors ${
                   activeCategory === category.id
                     ? "bg-emerald-600 text-white"
                     : "text-neutral-600 hover:text-emerald-600"
                 }`}
               >
-                <span>{category.icon}</span>
                 {category.label}
               </button>
             ))}
@@ -105,7 +104,7 @@ export default function SkillsSection() {
               className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow border text-center"
             >
               <div className="text-4xl mb-3 flex justify-center">{skill.icon}</div>
-              <h3 className="font-semibold text-neutral-800 text-sm">{skill.name}</h3>
+              <h3 className="font-semibold text-neutral-800 text-base">{skill.name}</h3>
             </div>
           ))}
         </div>
