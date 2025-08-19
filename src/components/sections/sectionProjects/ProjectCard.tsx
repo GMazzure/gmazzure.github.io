@@ -1,6 +1,24 @@
 import { FaGithub, FaExternalLinkAlt, FaReact, FaNodeJs, FaAws, FaPhp } from "react-icons/fa";
 import { SiTypescript, SiTailwindcss, SiNextdotjs, SiMongodb, SiPostgresql, SiStripe } from "react-icons/si";
 
+const techIcons: { [key: string]: JSX.Element } = {
+  'React': <FaReact className="text-blue-500" />,
+  'TypeScript': <SiTypescript className="text-blue-600" />,
+  'Tailwind': <SiTailwindcss className="text-cyan-500" />,
+  'Next.js': <SiNextdotjs className="text-black" />,
+  'MongoDB': <SiMongodb className="text-green-600" />,
+  'PostgreSQL': <SiPostgresql className="text-blue-700" />,
+  'AWS Lambda': <FaAws className="text-orange-500" />,
+  'Node.js': <FaNodeJs className="text-green-600" />,
+  'Stripe': <SiStripe className="text-purple-600" />,
+  'OAuth': <span className="text-gray-600">🔐</span>,
+  'PHP': <FaPhp className="text-indigo-600" />
+};
+
+const getTechIcon = (techName: string) => {
+  return techIcons[techName] || <span className="text-gray-500">⚡</span>;
+};
+
 type Props = {
   title: string;
   description: string;
@@ -33,34 +51,15 @@ export default function ProjectCard({
         <div className="mb-6">
           <p className="text-xs text-neutral-500 mb-2 font-medium uppercase tracking-wide">Built with</p>
           <div className="flex flex-wrap gap-2">
-            {technologies.map((tech) => {
-              const getTechIcon = (techName: string) => {
-                const icons: { [key: string]: JSX.Element } = {
-                  'React': <FaReact className="text-blue-500" />,
-                  'TypeScript': <SiTypescript className="text-blue-600" />,
-                  'Tailwind': <SiTailwindcss className="text-cyan-500" />,
-                  'Next.js': <SiNextdotjs className="text-black" />,
-                  'MongoDB': <SiMongodb className="text-green-600" />,
-                  'PostgreSQL': <SiPostgresql className="text-blue-700" />,
-                  'AWS Lambda': <FaAws className="text-orange-500" />,
-                  'Node.js': <FaNodeJs className="text-green-600" />,
-                  'Stripe': <SiStripe className="text-purple-600" />,
-                  'OAuth': <span className="text-gray-600">🔐</span>,
-                  'PHP': <FaPhp className="text-indigo-600" />
-                };
-                return icons[techName] || <span className="text-gray-500">⚡</span>;
-              };
-              
-              return (
-                <div
-                  key={tech}
-                  className="flex items-center gap-1.5 px-3 py-1.5 bg-gray-50 text-gray-700 rounded-lg text-base font-medium hover:bg-gray-100 transition-colors"
-                >
-                  {getTechIcon(tech)}
-                  <span>{tech}</span>
-                </div>
-              );
-            })}
+            {technologies.map((tech) => (
+              <div
+                key={tech}
+                className="flex items-center gap-1.5 px-3 py-1.5 bg-gray-50 text-gray-700 rounded-lg text-base font-medium hover:bg-gray-100 transition-colors"
+              >
+                {getTechIcon(tech)}
+                <span>{tech}</span>
+              </div>
+            ))}
           </div>
         </div>
         

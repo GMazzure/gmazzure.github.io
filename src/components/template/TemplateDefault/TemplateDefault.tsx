@@ -7,7 +7,7 @@ type Props = {
 function TemplateDefault({ children }: Props) {
   return (
     <>
-      <Header></Header>
+      <Header />
       <div>{children}</div>
     </>
   );

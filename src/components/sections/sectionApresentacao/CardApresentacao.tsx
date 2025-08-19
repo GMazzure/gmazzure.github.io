@@ -9,14 +9,14 @@ import githubIcon from "../../../assets/icons/github-white.png";
 
 export default function CardApresentacao() {
   const [currentText, setCurrentText] = useState(0);
-  const observable$ = interval(2500);
 
   useEffect(() => {
+    const observable$ = interval(2500);
     const subscription = observable$.subscribe(() =>
       setCurrentText((curState: number) => (curState < 4 ? curState + 1 : 0))
     );
     return () => subscription.unsubscribe();
-  }, [observable$]);
+  }, []);
 
   return (
     <section className="cardLayout p-8" id="about-me">
@@ -31,10 +31,10 @@ export default function CardApresentacao() {
           <div className="words-wrapper text-neutral-500 mt-0 text-sm size tracking-widest">
             <p
               className={
-                "slide " + (currentText != 0 ? "is-hidden" : "is-visible")
+                " slide " + (currentText != 2 ? "is-hidden" : "is-visible")
               }
             >
-              FULL STACK DEVELOPER
+              SOFTWARE ENGINEER
             </p>
 
             <p
@@ -47,18 +47,10 @@ export default function CardApresentacao() {
 
             <p
               className={
-                " slide " + (currentText != 2 ? "is-hidden" : "is-visible")
-              }
-            >
-              SOFTWARE ENGINEER
-            </p>
-
-            <p
-              className={
                 " slide " + (currentText != 3 ? "is-hidden" : "is-visible")
               }
             >
-              TECH LEADER
+              IT Lead
             </p>
 
             <p
@@ -75,9 +67,9 @@ export default function CardApresentacao() {
           </p>
 
           <p className="text-neutral-500 text-lg font-regular">
-            Hello there! I’m a Senior Software Engineer with 8+ years of experience 
-            helping to build a smarter digital world. I’ve designed system architectures, 
-            automated complex flows, led and mentored development teams through impactful projects. 
+            Hello there! I’m a Senior Software Engineer with 8+ years of experience
+            helping to build a smarter digital world. I’ve designed system architectures,
+            automated complex flows, led and mentored development teams through impactful projects.
             My mission is simple: build software that not only works, but also lasts.
           </p>
 
@@ -93,12 +85,12 @@ export default function CardApresentacao() {
           >
             <a href="https://www.linkedin.com/in/gustavo-mazzure/" target="_blank">
               <li>
-                <img src={linkedinIcon} alt="" width="26" />
+                <img src={linkedinIcon} alt="LinkedIn profile" width="26" />
               </li>
             </a>
             <a href="https://github.com/GMazzure" target="_blank">
               <li>
-                <img src={githubIcon} alt="" width="26" />
+                <img src={githubIcon} alt="GitHub profile" width="26" />
               </li>
             </a>
           </ul>

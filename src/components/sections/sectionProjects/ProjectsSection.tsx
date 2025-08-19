@@ -52,18 +52,21 @@ export default function ProjectsSection() {
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map(project=> (
-            <div key={project.title} className="relative">
-              <div className="absolute top-4 right-4 z-10">
-                <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                  getStatusBadge(project.status).color
-                }`}>
-                  {getStatusBadge(project.status).text}
-                </span>
+          {projects.map(project=> {
+            const statusBadge = getStatusBadge(project.status);
+            return (
+              <div key={project.title} className="relative">
+                <div className="absolute top-4 right-4 z-10">
+                  <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                    statusBadge.color
+                  }`}>
+                    {statusBadge.text}
+                  </span>
+                </div>
+                <ProjectCard {...project} />
               </div>
-              <ProjectCard {...project} />
-            </div>
-          ))}
+            );
+          })}
         </div>
        
       </div>

@@ -101,7 +101,6 @@ export default function ContactSection() {
     e.preventDefault();
     
     if (!validateForm()) {
-      // If honeypot is triggered, silently pretend success
       if (formData.website && formData.website.length > 0) {
         setSubmitSuccess(true);
         setSubmitMessage('Thank you! Your message has been sent successfully.');
@@ -128,7 +127,12 @@ export default function ContactSection() {
         }),
       });
       
-      const data = await response.json();
+      let data;
+      try {
+        data = await response.json();
+      } catch {
+        data = { message: 'Invalid response format' };
+      }
       
       if (response.ok) {
         setSubmitSuccess(true);

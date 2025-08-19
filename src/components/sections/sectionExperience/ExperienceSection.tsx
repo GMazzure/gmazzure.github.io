@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import {
   FaAws,
   FaPhp, FaDocker, FaLaravel,
@@ -16,7 +17,7 @@ type Experience = {
 };
 
 export default function ExperienceSection() {
-  const experiences: Experience[] = [
+  const experiences: Experience[] = useMemo(() => [
     {
       company: "Puchta Engenharia",
       position: "Lead Software Engineer",
@@ -80,7 +81,7 @@ export default function ExperienceSection() {
         <FaPython size={24} title="Python" />,
       ],
     },
-  ];
+  ], []);
 
   return (
     <section className="experience-section py-16 bg-white" id="experience">
@@ -92,9 +93,9 @@ export default function ExperienceSection() {
           </p>
         </div>
         <div className="space-y-8">
-          {experiences.map((exp, index) => (
+          {experiences.map((exp) => (
             <div
-              key={index}
+              key={`${exp.company}-${exp.position}`}
               className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
             >
               <div className="flex justify-between items-start mb-4">
